@@ -19,6 +19,13 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
+# Configures Elegua
+config :elegua,
+  user_model: Oduduwa.Mambo,
+  password_field: :magic_word,
+  username_field: :baptismal_name,
+  email_field: :spiritual_mailbox
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
