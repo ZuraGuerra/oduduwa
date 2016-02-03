@@ -1,0 +1,6 @@
+<h2>New mambo</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: mambo_path(@conn, :create) %>
+
+<%= link "Back", to: mambo_path(@conn, :index) %>

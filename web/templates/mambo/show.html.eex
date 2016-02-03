@@ -1,0 +1,38 @@
+<h2>Show mambo</h2>
+
+<ul>
+
+  <li>
+    <strong>Spiritual mailbox:</strong>
+    <%= @mambo.spiritual_mailbox %>
+  </li>
+
+  <li>
+    <strong>Baptismal name:</strong>
+    <%= @mambo.baptismal_name %>
+  </li>
+
+  <li>
+    <strong>Magic word:</strong>
+    <%= @mambo.magic_word %>
+  </li>
+
+  <li>
+    <strong>Magic word confirmation:</strong>
+    <%= @mambo.magic_word_confirmation %>
+  </li>
+
+  <li>
+    <strong>Hashed magic word:</strong>
+    <%= @mambo.hashed_magic_word %>
+  </li>
+
+  <li>
+    <strong>Is high priest:</strong>
+    <%= @mambo.is_high_priest %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: mambo_path(@conn, :edit, @mambo) %>
+<%= link "Back", to: mambo_path(@conn, :index) %>

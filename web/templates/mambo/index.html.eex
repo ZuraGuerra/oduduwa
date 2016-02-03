@@ -1,0 +1,36 @@
+<h2>Listing mambos</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Spiritual mailbox</th>
+      <th>Baptismal name</th>
+      <th>Magic word</th>
+      <th>Magic word confirmation</th>
+      <th>Hashed magic word</th>
+      <th>Is high priest</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for mambo <- @mambos do %>
+    <tr>
+      <td><%= mambo.spiritual_mailbox %></td>
+      <td><%= mambo.baptismal_name %></td>
+      <td><%= mambo.magic_word %></td>
+      <td><%= mambo.magic_word_confirmation %></td>
+      <td><%= mambo.hashed_magic_word %></td>
+      <td><%= mambo.is_high_priest %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: mambo_path(@conn, :show, mambo), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: mambo_path(@conn, :edit, mambo), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: mambo_path(@conn, :delete, mambo), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New mambo", to: mambo_path(@conn, :new) %>
